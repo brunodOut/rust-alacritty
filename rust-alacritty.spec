@@ -12,24 +12,18 @@
 %global crate alacritty
 
 Name:           rust-%{crate}
-Version:        0.5.0
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        GPU-accelerated terminal emulator
 
-# Upstream license specification: Apache-2.0
-# License PR: https://github.com/alacritty/alacritty/pull/4316
 License:        ASL 2.0
 URL:            https://crates.io/crates/alacritty
 Source:         %{crates_source}
 Source1:        https://github.com/alacritty/alacritty/archive/v%{version}/alacritty-github-sources-%{version}.tar.gz
 
 # Initial patched metadata:
-# - bump dependencies for: glutin, parking_lot and wayland-client
 # - remove windows and macos targets
 Patch0:         alacritty-fix-metadata.diff
-# Patch to address glutin bump to 0.25. Changes are in master [0]
-# [0]: https://github.com/alacritty/alacritty/commit/67db9b2
-Patch1:         alacritty-0.5.0-fix-glutin.diff
 
 ExclusiveArch:  %{rust_arches}
 
@@ -96,8 +90,6 @@ BuildRequires:  ncurses >= 6.2
 # - Application Config File
 tar -xzvf %{SOURCE1}
 cp -a %{crate}-%{version_no_tilde}/alacritty.yml ..
-# https://github.com/alacritty/alacritty/pull/4316
-cp -a %{crate}-%{version_no_tilde}/LICENSE-APACHE .
 %cargo_prep
 
 %generate_buildrequires
@@ -135,5 +127,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Alacritty.desktop
 %endif
 
 %changelog
+* Sun Nov 29 17:30:00 CEST 2020 returntrip <stefano@figura.im> - 0.6.0-1
+- Update to 0.6.0
+
 * Fri Oct 16 13:45:04 CEST 2020 returntrip <stefano@figura.im> - 0.5.0-1
 - Initial package

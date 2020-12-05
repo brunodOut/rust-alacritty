@@ -1,43 +1,17 @@
---- alacritty-0.5.0/Cargo.toml	2020-08-01T01:11:45+00:00
-+++ alacritty-0.5.0/Cargo.toml	2020-10-16T11:45:04.684570+00:00
-@@ -38,7 +38,7 @@
- version = "1"
-
- [dependencies.glutin]
--version = "0.24.0"
-+version = "0.25.0"
- features = ["serde"]
-
- [dependencies.libc]
-@@ -52,7 +52,7 @@
- version = "4"
-
- [dependencies.parking_lot]
--version = "0.10.2"
-+version = "0.11.0"
-
- [dependencies.serde]
- version = "1"
-@@ -80,16 +80,13 @@
-
- [features]
- bench = []
--default = ["wayland", "x11", "winpty"]
-+default = ["wayland", "x11"]
+--- alacritty-0.6.0/Cargo.toml	2020-11-25T00:02:00+00:00
++++ alacritty-0.6.0/Cargo.toml	2020-11-29T16:17:39.954842+00:00
+@@ -82,10 +82,7 @@
  live-shader-reload = []
  nightly = []
- wayland = ["copypasta/wayland"]
+ wayland = ["copypasta/wayland", "glutin/wayland", "wayland-client"]
 -winpty = ["alacritty_terminal/winpty"]
- x11 = ["copypasta/x11"]
+ x11 = ["copypasta/x11", "glutin/x11", "x11-dl", "image"]
 -[target."cfg(any(target_os = \"macos\", windows))".dependencies.dirs]
 -version = "2.0.2"
  [target."cfg(not(any(target_os=\"windows\", target_os=\"macos\")))".dependencies.wayland-client]
--version = "0.27.0"
-+version = "0.28.0"
+ version = "0.28.0"
  features = ["dlopen"]
-
- [target."cfg(not(any(target_os=\"windows\", target_os=\"macos\")))".dependencies.x11-dl]
-@@ -100,10 +97,3 @@
+@@ -101,10 +98,3 @@
  default-features = false
  [target."cfg(not(windows))".dependencies.xdg]
  version = "2"
