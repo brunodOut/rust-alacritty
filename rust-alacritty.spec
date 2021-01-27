@@ -13,7 +13,7 @@
 
 Name:           rust-%{crate}
 Version:        0.6.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        GPU-accelerated terminal emulator
 
 License:        ASL 2.0
@@ -127,6 +127,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Alacritty.desktop
 %endif
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Mon Dec 28 13:27:02 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.6.0-2
 - Rebuild
 
