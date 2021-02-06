@@ -1,22 +1,17 @@
---- alacritty-0.6.0/Cargo.toml	2020-11-25T00:02:00+00:00
-+++ alacritty-0.6.0/Cargo.toml	2020-11-29T16:17:39.954842+00:00
-@@ -82,10 +82,7 @@
- live-shader-reload = []
- nightly = []
- wayland = ["copypasta/wayland", "glutin/wayland", "wayland-client"]
--winpty = ["alacritty_terminal/winpty"]
- x11 = ["copypasta/x11", "glutin/x11", "x11-dl", "image"]
--[target."cfg(any(target_os = \"macos\", windows))".dependencies.dirs]
--version = "2.0.2"
- [target."cfg(not(any(target_os=\"windows\", target_os=\"macos\")))".dependencies.wayland-client]
- version = "0.28.0"
- features = ["dlopen"]
-@@ -101,10 +98,3 @@
+--- alacritty-0.7.1/Cargo.toml	1970-01-01T00:00:00+00:00
++++ alacritty-0.7.1/Cargo.toml	2021-01-10T15:24:46.915618+00:00
+@@ -105,16 +105,3 @@
  default-features = false
  [target."cfg(not(windows))".dependencies.xdg]
  version = "2"
+-[target."cfg(target_os = \"macos\")".dependencies.cocoa]
+-version = "0.24.0"
+-
 -[target."cfg(target_os = \"macos\")".dependencies.objc]
 -version = "0.2.2"
+-
+-[target."cfg(target_os = \"macos\")".dependencies.raw-window-handle]
+-version = "0.3.3"
 -[target."cfg(windows)".dependencies.winapi]
 -version = "0.3.7"
 -features = ["impl-default", "wincon"]
