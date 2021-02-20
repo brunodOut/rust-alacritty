@@ -12,7 +12,7 @@
 %global crate alacritty
 
 Name:           rust-%{crate}
-Version:        0.7.1
+Version:        0.7.2
 Release:        1%{?dist}
 Summary:        Fast, cross-platform, OpenGL terminal emulator
 
@@ -128,6 +128,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Alacritty.desktop
 %endif
 
 %changelog
+* Sat Feb 20 15:45:00 CET 2021 returntrip <stefano@figura.im> - 0.7.2-1
+- Update to 0.7.2 (Fixes RHZB#1930981)
+
 * Sat Feb 6 12:25:00 CET 2021 returntrip <stefano@figura.im> - 0.7.1-1
 - Update to 0.7.1 (Fixes RHZB#1914242)
 
