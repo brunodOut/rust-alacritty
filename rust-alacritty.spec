@@ -13,7 +13,7 @@
 
 Name:           rust-%{crate}
 Version:        0.8.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Fast, cross-platform, OpenGL terminal emulator
 
 # Upstream license specification: Apache-2.0
@@ -125,6 +125,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Alacritty.desktop
 %endif
 
 %changelog
+* Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Wed May 19 2021 Fabio Valentini <decathorpe@gmail.com> - 0.8.0-1
 - Update to version 0.8.0.
 - Fixes RHBZ#1962046
