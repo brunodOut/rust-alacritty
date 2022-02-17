@@ -30,6 +30,13 @@ ExclusiveArch:  %{rust_arches}
 
 BuildRequires:  rust-packaging
 BuildRequires:  desktop-file-utils
+# Added based on alacritty's official dependency list:
+BuildRequires: cmake
+BuildRequires: freetype-devel
+BuildRequires: fontconfig-devel
+BuildRequires: libxcb-devel
+BuildRequires: libxkbcommon-devel
+BuildRequires: g++
 
 %if !%{build_terminfo}
 BuildRequires:  ncurses >= 6.2
