@@ -42,6 +42,11 @@ BuildRequires: g++
 BuildRequires:  ncurses >= 6.2
 %endif
 
+# Added based on Bug #2025572 (missing libwayland-egl)
+#    - As alacritty uses dlopen for some code, RPM cannot
+#      detect some dependencies automatically.
+Requires: libwayland-egl
+
 %global _description %{expand:
 Fast, cross-platform, OpenGL terminal emulator.}
 
